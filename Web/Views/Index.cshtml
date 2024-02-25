@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model CompanyViewModel
+
+<h1>Directory</h1>
+<p>Name: @Model.Name</p>
+
+<h2>Departments</h2>
+@foreach (var department in Model.Departments)
+{
+    <h3>@department.Name</h3>
+    <ul>
+        @foreach (var division in department.Divisions)
+        {
+            <li>@division.Name</li>
+        }
+    </ul>
+}
